@@ -1,5 +1,3 @@
-
-
 # FileSystem
 ## 实验目的
     本次实训的总体目的在于通过系统的编程训练，培养学生编写一个具有一定难度的小型系统的能力，培养学生从编写单个程序，实现单个程序功
@@ -65,7 +63,7 @@ class file
 	char *text;                        //文件内容
 
   public:  
-    char filename[9];                  //文件名
+     char filename[9];                  //文件名
     bool rw;                         //文件属性
     string fcreatetime;                 //创建文件时间
     file *next;                        
@@ -100,28 +98,28 @@ char dirname[9];                    //目录名
     file  *pfile;          
     directory *nextdir,*subdir,*fatherdir;    //子节点、兄弟节点、父节点
     directory(char *dname)               //复制构造函数
-	{ 
-	  strcpy(dirname,dname);
-	  pfile=NULL;
+    { 
+      strcpy(dirname,dname);
+      pfile=NULL;
     }  
-	directory()                          //构造函数
-	{  
-	  pfile=NULL;
-	  cin>>dirname; 
+    directory()                          //构造函数
+    {  
+      pfile=NULL;
+      cin>>dirname; 
     }  
-	void creatfile();                      //创建文件 
-	void deletefile();                     //删除文件
-	void showfile();                      //显示文件内容
-	void renamefile();                    //重命名文件
-	void copyfile();                      //复制文件
+    void creatfile();                      //创建文件 
+    void deletefile();                     //删除文件
+    void showfile();                      //显示文件内容
+    void renamefile();                    //重命名文件
+    void copyfile();                      //复制文件
     void pastefile();                     //粘贴文件
     char *getdname()                    //返回目录名
 	{     
 	  return dirname;
     }  
-	~directory()                         //析构函数
-	{
-	  delete pfile;
+    ~directory()                         //析构函数
+    {
+      delete pfile;
     }
 };  
 ```
@@ -145,8 +143,8 @@ class dirmanager {
 	
   private:  
     directory *root,*p,*p1,*p2;              //定义根目录节点
-	directory *dir[10];                     //定义目录的大小
+    directory *dir[10];                     //定义目录的大小
 }; 
 ```
 ## 实验结果与截图
-   略
+    略
