@@ -60,30 +60,30 @@
 class file   
  {   private:  
     int size;  	                      //文件大小
-	char *text;                        //文件内容
+    char *text;                        //文件内容
 
   public:  
      char filename[9];                  //文件名
     bool rw;                         //文件属性
     string fcreatetime;                 //创建文件时间
     file *next;                        
- 	file();                            //构造函数
-	void editfile();                     //编辑文件内容
-	char *getfilename()                 //返回文件名
-	{
-	  return filename;
+    file();                            //构造函数
+    void editfile();                     //编辑文件内容
+    char *getfilename()                 //返回文件名
+    {
+      return filename;
     }  
-	void show_text()                   //显示文件信息
-	{
-	  return text;
+    void show_text()                   //显示文件信息
+    {
+      return text;
     }  
-    	int getsize()                       //返回大小
-	{       
-	  return size;
+    int getsize()                       //返回大小
+    {       
+      return size;
     }   
-	~file()                            //析构函数
-	{
-	  delete text;
+    ~file()                            //析构函数
+    {
+      delete text;
     }
 }; 
 ```
