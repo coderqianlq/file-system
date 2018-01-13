@@ -1,3 +1,5 @@
+
+
 # FileSystem
 ## 实验目的
     本次实训的总体目的在于通过系统的编程训练，培养学生编写一个具有一定难度的小型系统的能力，培养学生从编写单个程序，实现单个程序功
@@ -31,7 +33,7 @@
     系统流程涉及整个文件系统的操作以及运行的流程，用户可以输入help查看所有命令的帮助文档。
 ## 设计分析
     1. 存储结构
-    采用二叉链表存储方式，即以二叉链表作树的存储结构。链表中节点的两个链域分别指向该节点的第一个孩子结点和下一个兄弟节点，节点可以
+    采用二叉链表存储方式，即以二叉链表作树的存储结构。链表中节点的两个链域分别指向该节点的第一个孩子结点和下一个兄弟节点，节点可以    
     表示目录或文件，目录下面允许有节点，文件下面不允许有其它节点。
     2. 基于二叉表的操作：新建、删除和显示等
       2.1 新建
@@ -42,3 +44,110 @@
     3. 操作指令
       3.1 用户指令
       3.2 文件、目录指令
+## 设计方案与数据结构
+**用户界面模块**
+```c++
+ class user{
+ private:
+  char username[9];
+   char password[9]; 
+ public:
+  void reg();
+  void login();
+  void inter();
+ };
+```
+**文件模块**
+```c++
+class file   
+ { 
+  private:  
+    int size;  	                      //文件大小
+	char *text;                        //文件内容
+
+  public:  
+    char filename[9];                  //文件名
+    bool rw;                         //文件属性
+    string fcreatetime;                 //创建文件时间
+    file *next;                        
+ 	file();                            //构造函数
+	void editfile();                     //编辑文件内容
+	char *getfilename()                 //返回文件名
+	{
+	  return filename;
+    }  
+	void show_text()                   //显示文件信息
+	{
+	  return text;
+    }  
+    	int getsize()                       //返回大小
+	{       
+	  return size;
+    }   
+	~file()                            //析构函数
+	{
+	  delete text;
+    }
+}; 
+```
+**目录模块**
+```c++
+class directory  
+{ 
+  private:  
+char dirname[9];                    //目录名
+
+  public:  
+    file  *pfile;          
+    directory *nextdir,*subdir,*fatherdir;    //子节点、兄弟节点、父节点
+    directory(char *dname)               //复制构造函数
+	{ 
+	  strcpy(dirname,dname);
+	  pfile=NULL;
+    }  
+	directory()                          //构造函数
+	{  
+	  pfile=NULL;
+	  cin>>dirname; 
+    }  
+	void creatfile();                      //创建文件 
+	void deletefile();                     //删除文件
+	void showfile();                      //显示文件内容
+	void renamefile();                    //重命名文件
+	void copyfile();                      //复制文件
+    void pastefile();                     //粘贴文件
+    char *getdname()                    //返回目录名
+	{     
+	  return dirname;
+    }  
+	~directory()                         //析构函数
+	{
+	  delete pfile;
+    }
+};  
+```
+**主模块**
+```c++
+class dirmanager { 
+  public:   
+    void manager();                      //显示界面
+    void addnew();                       //新建目录
+    void copydir();                       //复制目录
+    void pastedir();                       //粘贴目录
+    void renamedir();                     //重命名目录
+    void cdsubdir();                       //进入子目录
+    void showdir();                       //显示目录信息
+    void showdirinfor();                   //显示目录、文件信息
+    void help();                          //指令帮助文档
+    ~dirmanager()                        //析构函数
+    {
+        delete root;
+    } 
+	
+  private:  
+    directory *root,*p,*p1,*p2;              //定义根目录节点
+	directory *dir[10];                     //定义目录的大小
+}; 
+```
+## 实验结果与截图
+   略
