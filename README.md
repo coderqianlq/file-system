@@ -1,4 +1,3 @@
-
 # FileSystem
 ## 实验目的
     本次实训的总体目的在于通过系统的编程训练，培养学生编写一个具有一定难度的小型系统的能力，培养学生从编写单个程序，实现单个程序功
@@ -31,7 +30,7 @@
 ## 实验建模
     1. 数据流程图
     系统流程涉及整个文件系统的操作以及运行的流程，用户可以输入help查看所有命令的帮助文档。
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf5vobyp8j30ic0h774k.jpg)
+![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf5vobyp8j30ic0h774k.jpg)
     注：流程图所示功能并不完整，具体功能参照代码。
     2. 新建目录、文件
     ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf6082r9xj30530fdweu.jpg)
