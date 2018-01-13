@@ -48,7 +48,7 @@
  class user{
  private:
   char username[9];
-   char password[9]; 
+  char password[9]; 
  public:
   void reg();
   void login();
@@ -58,12 +58,13 @@
 **文件模块**
 ```c++
 class file   
- {   private:  
+ {   
+  private:  
     int size;  	                      //文件大小
     char *text;                        //文件内容
 
   public:  
-     char filename[9];                  //文件名
+    char filename[9];                  //文件名
     bool rw;                         //文件属性
     string fcreatetime;                 //创建文件时间
     file *next;                        
@@ -87,11 +88,12 @@ class file
     }
 }; 
 ```
-**目录模块**```c++
+**目录模块**
+```c++
 class directory  
 { 
   private:  
-char dirname[9];                    //目录名
+    char dirname[9];                    //目录名
 
   public:  
     file  *pfile;          
@@ -113,8 +115,8 @@ char dirname[9];                    //目录名
     void copyfile();                      //复制文件
     void pastefile();                     //粘贴文件
     char *getdname()                    //返回目录名
-	{     
-	  return dirname;
+    {     
+      return dirname;
     }  
     ~directory()                         //析构函数
     {
@@ -137,9 +139,9 @@ class dirmanager {
     void help();                          //指令帮助文档
     ~dirmanager()                        //析构函数
     {
-        delete root;
+      delete root;
     } 
-	
+
   private:  
     directory *root,*p,*p1,*p2;              //定义根目录节点
     directory *dir[10];                     //定义目录的大小
