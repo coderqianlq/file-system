@@ -28,40 +28,18 @@
     6．实验实现基于windows平台。
     7．实验开发语言必须选用C/C++，不能选用JAVA。
 ## 实验建模
-    1. 数据流程图
     系统流程涉及整个文件系统的操作以及运行的流程，用户可以输入help查看所有命令的帮助文档。
-![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf5vobyp8j30ic0h774k.jpg)
-    注：流程图所示功能并不完整，具体功能参照代码。
-    2. 新建目录、文件
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf6082r9xj30530fdweu.jpg)
-    3. 进入子目录
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf61mv17yj30530bs74i.jpg)
-    4. 返回上一级
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf62m8q0sj30610cet8v.jpg)
-    5. 重命名目录、文件
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf6378j4gj306s0fdjrw.jpg)
-    6. 复制粘贴目录、文件
-    这里将目录和文件的拷贝粘贴放在同一张流程图中，但实际过程中两者具体的流程是有很大区别的。
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf642shz4j30610krdgg.jpg)
-    注：图示部分为相对简化的流程图，递归的过程以及其它复杂判断省略。
-    7. 文件结构图
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf6508i3xj3080064dfn.jpg)
 ## 设计分析
     1. 存储结构
     采用二叉链表存储方式，即以二叉链表作树的存储结构。链表中节点的两个链域分别指向该节点的第一个孩子结点和下一个兄弟节点，节点可以
     表示目录或文件，目录下面允许有节点，文件下面不允许有其它节点。
-    ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf66n4i1vj308z05mweh.jpg)
     2. 基于二叉表的操作：新建、删除和显示等
       2.1 新建
       传递上级目录节点(父节点)，找到对应子节点为止。
-      ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf67t8i4rj30b007tt8q.jpg)
       2.2 删除(销毁)
       单个文件，直接删除节点，释放内存； 
       单个目录，采取简单的删除策略，无论目录下是否有子目录或者文件，都直接删除该目录。
-      ![](https://ws1.sinaimg.cn/large/006fFwoHgy1fnf691bv2fj30e408ldfv.jpg)
     3. 操作指令
       3.1 用户指令
-      操作符 | 命令 | 功能说明
-      ------|------|---------
-      login | login | 登录系统
-      exit | exit  | 退出系统  
+      3.2 文件、目录指令
+## 设计方案与数据结构
