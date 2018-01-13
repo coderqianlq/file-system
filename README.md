@@ -87,8 +87,7 @@ class file
     }
 }; 
 ```
-**目录模块**
-```c++
+**目录模块**```c++
 class directory  
 { 
   private:  
